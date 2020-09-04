@@ -1,0 +1,27 @@
+name: RandomGive
+version: 0.0.1
+main: dev.hevav.randomgive.RandomGive
+commands:
+  rgive:
+    description: Do random give
+    usage: /rgive [player] [limit] [item] [item2] (item3..)
+    permission: randomgive.any
+  rkitadd:
+    description: Add a kit to the config
+    usage: /rkitadd [name] [item] [item2] (item3..)
+    permission: randomgive.any
+  rkitremove:
+    description: Remove a kit from the config
+    usage: /rkitremove [name]
+    permission: randomgive.any
+  rkit:
+    description: Random give from the kit from the config
+    usage: /rkit [player] [kit] [limit]
+    permission: randomgive.kit
+permissions:
+  randomgive.any:
+    default: op
+    description: Give any block(/rgive), add/remove kits
+  randomgive.kit:
+    default: op
+    description: Give the kit(/rkit)

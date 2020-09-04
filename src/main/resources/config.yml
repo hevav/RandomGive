@@ -1,0 +1,10 @@
+kits:
+  wools:
+    - id: 35
+      durability: 2
+    - id: 35
+      durability: 3
+    - id: 35
+      durability: 4
+    - id: 35
+      durability: 5
