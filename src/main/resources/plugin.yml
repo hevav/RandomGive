@@ -1,5 +1,5 @@
 name: RandomGive
-version: 0.0.1
+version: 0.0.2
 main: dev.hevav.randomgive.RandomGive
 commands:
   rgive:
@@ -17,6 +17,10 @@ commands:
   rkit:
     description: Random give from the kit from the config
     usage: /rkit [player] [kit] [limit]
+    permission: randomgive.kit
+  rkitloop:
+    description: Loops random give from the kit from the config
+    usage: /rkitloop [player] [kit] [limit] [interval]
     permission: randomgive.kit
 permissions:
   randomgive.any:

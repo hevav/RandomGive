@@ -1,10 +1,22 @@
 kits:
+  logs:
+    - durability: '0'
+      id: log
+      isNeg: ''
+    - durability: '0'
+      id: log
+      isNeg: ''
   wools:
-    - id: 35
-      durability: 2
-    - id: 35
-      durability: 3
-    - id: 35
-      durability: 4
-    - id: 35
-      durability: 5
+    - durability: '2'
+      id: wool
+      isNeg: ''
+    - durability: '3'
+      id: wool
+      isNeg: ''
+  prokit228:
+    - durability: '0'
+      id: stone
+      isNeg: 'true'
+    - durability: '0'
+      id: dirt
+      isNeg: ''

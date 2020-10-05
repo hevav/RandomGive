@@ -15,7 +15,7 @@ public class RKitAdd implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(strings.length < 3)
             return false;
-        List<HashMap<String, Integer>> toGive = new ArrayList<>();
+        List<HashMap<String, String>> toGive = new ArrayList<>();
         for (int i = 1; i < strings.length; i++) {
             toGive.add(GiveHelper.parseMap(strings[i]));
         }
