@@ -1,15 +1,16 @@
-package dev.hevav.randomgive.commands;
+package dev.hevav.randomtools.commands.give;
 
-import dev.hevav.randomgive.helpers.GiveHelper;
+import dev.hevav.randomtools.RandomTools;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class RKit implements CommandExecutor {
+public class RKitRemove implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if(strings.length != 3)
+        if(strings.length != 1)
             return false;
-        return GiveHelper.giveAKit(strings[0], strings[1], Integer.parseInt(strings[2]));
+        RandomTools.config.set(String.format("kits.%s", strings[0]), null);
+        return true;
     }
 }

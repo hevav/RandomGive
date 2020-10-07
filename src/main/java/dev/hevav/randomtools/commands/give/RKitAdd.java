@@ -1,7 +1,7 @@
-package dev.hevav.randomgive.commands;
+package dev.hevav.randomtools.commands.give;
 
-import dev.hevav.randomgive.RandomGive;
-import dev.hevav.randomgive.helpers.GiveHelper;
+import dev.hevav.randomtools.RandomTools;
+import dev.hevav.randomtools.helpers.GiveHelper;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,7 +19,7 @@ public class RKitAdd implements CommandExecutor {
         for (int i = 1; i < strings.length; i++) {
             toGive.add(GiveHelper.parseMap(strings[i]));
         }
-        RandomGive.config.set(String.format("kits.%s", strings[0]), toGive);
+        RandomTools.config.set(String.format("kits.%s", strings[0]), toGive);
         return true;
     }
 }

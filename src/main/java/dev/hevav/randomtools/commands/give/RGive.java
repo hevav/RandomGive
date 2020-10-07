@@ -1,6 +1,6 @@
-package dev.hevav.randomgive.commands;
+package dev.hevav.randomtools.commands.give;
 
-import dev.hevav.randomgive.helpers.GiveHelper;
+import dev.hevav.randomtools.helpers.GiveHelper;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

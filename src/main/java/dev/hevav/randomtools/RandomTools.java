@@ -1,10 +1,11 @@
-package dev.hevav.randomgive;
+package dev.hevav.randomtools;
 
-import dev.hevav.randomgive.commands.*;
+import dev.hevav.randomtools.commands.give.*;
+import dev.hevav.randomtools.helpers.TeamHelper;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class RandomGive extends JavaPlugin {
+public class RandomTools extends JavaPlugin {
     public static FileConfiguration config;
 
     @Override
@@ -17,6 +18,8 @@ public class RandomGive extends JavaPlugin {
         this.getCommand("rkitloop").setExecutor(new RKitLoop(this));
         this.getCommand("rkitadd").setExecutor(new RKitAdd());
         this.getCommand("rkitremove").setExecutor(new RKitRemove());
+
+        TeamHelper.updateCache();
     }
 
     @Override

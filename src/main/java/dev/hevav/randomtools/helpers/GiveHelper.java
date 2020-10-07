@@ -1,6 +1,6 @@
-package dev.hevav.randomgive.helpers;
+package dev.hevav.randomtools.helpers;
 
-import dev.hevav.randomgive.RandomGive;
+import dev.hevav.randomtools.RandomTools;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -81,7 +81,7 @@ public class GiveHelper {
     public static boolean giveAKit(String playersString, String kitName, int limit){
         try {
             Collection<Player> players = GiveHelper.getPlayerListByString(playersString);
-            List<HashMap<String, String>> maps = (List<HashMap<String, String>>) RandomGive.config.get(String.format("kits.%s", kitName));
+            List<HashMap<String, String>> maps = (List<HashMap<String, String>>) RandomTools.config.get(String.format("kits.%s", kitName));
             boolean invert = maps.get(0).get("isNeg").equals("true");
             List<ItemStack> toGive = new ArrayList<>();
             maps.forEach(map ->

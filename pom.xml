@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.hevav</groupId>
-    <artifactId>RandomGive</artifactId>
+    <artifactId>RandomTools</artifactId>
     <version>0.0.2</version>
 
     <repositories>

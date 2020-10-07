@@ -1,31 +1,51 @@
-name: RandomGive
+name: RandomTools
 version: 0.0.2
-main: dev.hevav.randomgive.RandomGive
+main: dev.hevav.randomtools.RandomTools
 commands:
+  #give tools
   rgive:
     description: Do random give
     usage: /rgive [player] [limit] [item] [item2] (item3..)
-    permission: randomgive.any
+    permission: randomtools.give.any
   rkitadd:
     description: Add a kit to the config
     usage: /rkitadd [name] [item] [item2] (item3..)
-    permission: randomgive.any
+    permission: randomtools.give.any
   rkitremove:
     description: Remove a kit from the config
     usage: /rkitremove [name]
-    permission: randomgive.any
+    permission: randomtools.give.any
   rkit:
     description: Random give from the kit from the config
     usage: /rkit [player] [kit] [limit]
-    permission: randomgive.kit
+    permission: randomtools.give.kit
   rkitloop:
     description: Loops random give from the kit from the config
     usage: /rkitloop [player] [kit] [limit] [interval]
-    permission: randomgive.kit
+    permission: randomtools.give.kit
+  #team tools
+  rteam:
+    description: Do an operation to the team
+    usage: /rteam [name or *] [operation]
+    permission: randomtools.team.op
+  rteamcreate:
+    description: Creates random teams
+    usage: /rteamcreate [limit]
+    permission: randomtools.team.any
+  rteamremove:
+    description: Removes random teams
+    usage: /rteamremove [name or *]
+    permission: randomtools.team.any
 permissions:
-  randomgive.any:
+  randomtools.give.any:
     default: op
     description: Give any block(/rgive), add/remove kits
-  randomgive.kit:
+  randomtools.give.kit:
     default: op
     description: Give the kit(/rkit)
+  randomtools.team.any:
+    default: op
+    description: Create/Remove the random team
+  randomtools.team.op:
+    default: op
+    description: Do an operation for the team
