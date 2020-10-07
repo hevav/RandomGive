@@ -15,7 +15,7 @@ public class TeamHelper {
         if (limit < 1)
             return false;
 
-        List<Player> playerList = (List<Player>) Bukkit.getOnlinePlayers();
+        List<Player> playerList = new ArrayList<>(Bukkit.getOnlinePlayers());
         if (limit > playerList.size())
             return false;
 
@@ -72,7 +72,7 @@ public class TeamHelper {
 
                 return teams;
             default:
-                int num = Integer.parseInt(operator);
+                int num = Integer.parseInt(operator) - 1;
                 return Collections.singletonList(teamsCache.get(num));
         }
     }

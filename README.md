@@ -1,6 +1,6 @@
 # hevav's RandomTools
 
-Version: 0.0.2<br>
+Version: 0.0.3<br>
 Spigot plugin to give random items from the command or from the kits<br>
 Native Spigot Version: 1.16.1<br>
 TESTED on 1.12.2 and 1.16.1<br>

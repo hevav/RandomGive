@@ -10,6 +10,7 @@ public class RTeamAdd implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (strings.length < 1)
             return false;
+
         return TeamHelper.createTeams(Integer.parseInt(strings[0]));
     }
 }

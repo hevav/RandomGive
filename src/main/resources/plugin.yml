@@ -1,5 +1,5 @@
 name: RandomTools
-version: 0.0.2
+version: 0.0.3
 main: dev.hevav.randomtools.RandomTools
 commands:
   #give tools
