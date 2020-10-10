@@ -1,6 +1,6 @@
 # hevav's RandomTools
 
-Version: 0.0.3<br>
+Version: 0.0.4<br>
 Spigot plugin to give random items from the command or from the kits<br>
 Native Spigot Version: 1.16.1<br>
 TESTED on 1.12.2 and 1.16.1<br>
@@ -11,6 +11,10 @@ TESTED on 1.12.2 and 1.16.1<br>
 
 -   Simplest use, give items from the command:
         ``/rgive <player> <limit> <item 1 id> <item 2 id...>``
+-   You can set give center and radius(in the center you get more items)
+        ``/rgivecenter [radius]``
+-   ...or disable this feature
+        ``/rgivecenter dis``
 -   You can create a kit to make it simpler:
         ``/rkitadd <name> <item 1 id> <item 2 id...>``
 -   This command creates a kit with all items without <item n id>:

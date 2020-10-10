@@ -1,6 +1,7 @@
 name: RandomTools
-version: 0.0.3
+version: 0.0.4
 main: dev.hevav.randomtools.RandomTools
+api-version: 1.16
 commands:
   #give tools
   rgive:
@@ -23,6 +24,10 @@ commands:
     description: Loops random give from the kit from the config
     usage: /rkitloop [player] [kit] [limit] [interval]
     permission: randomtools.give.kit
+  rgivecenter:
+    description: Set center(in center you have more resources)
+    usage: /rgivecenter [radius * block quanity]
+    permission: randomtools.give.any
   #team tools
   rteam:
     description: Do an operation to the team

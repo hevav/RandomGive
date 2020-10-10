@@ -17,6 +17,7 @@ public class RandomTools extends JavaPlugin {
         config = this.getConfig();
 
         this.getCommand("rgive").setExecutor(new RGive());
+        this.getCommand("rgivecenter").setExecutor(new RGiveCenter());
         this.getCommand("rkit").setExecutor(new RKit());
         this.getCommand("rkitloop").setExecutor(new RKitLoop(this));
         this.getCommand("rkitadd").setExecutor(new RKitAdd());

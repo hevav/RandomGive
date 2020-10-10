@@ -2,6 +2,7 @@ package dev.hevav.randomtools.helpers;
 
 import dev.hevav.randomtools.RandomTools;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -35,9 +36,9 @@ public class GiveHelper {
         return Collections.singleton(Bukkit.getPlayerExact(str));
     }
 
-    public static List<ItemStack> getRandomItemStack(List<ItemStack> full, int limit, boolean invert){
+    public static List<ItemStack> getRandomItemStack(List<ItemStack> full, int limit, boolean invert, Location location){
         List<ItemStack> randomItemStack = new ArrayList<>();
-        for(int i = 0; i<limit; i++){
+        for(int i = 0; i<multiplyLimit(limit, location); i++){
             ItemStack itemStack = full.get(random.nextInt(full.size()));
             if (invert){
                 Material[] all = Material.values();
@@ -94,7 +95,7 @@ public class GiveHelper {
             );
 
             players.forEach(player -> {
-                        List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, limit, invert);
+                        List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, limit, invert, player.getLocation());
                         randomItemStack.forEach(itemStack ->
                                 player.getInventory().addItem(itemStack)
                         );
@@ -106,6 +107,17 @@ public class GiveHelper {
             return false;
         }
         return true;
+    }
+
+    private static int multiplyLimit(int limit, Location playerLocation){
+        if (RandomTools.config.contains("rgivecenter")) {
+            Location middleLocation = RandomTools.config.getLocation("rgivecenterloc");
+            double locationAmount = RandomTools.config.getInt("rgivecenter");
+            double amountMultiplier = locationAmount - middleLocation.distance(playerLocation);
+            limit *= amountMultiplier / locationAmount;
+        }
+
+        return Math.max(1, Math.min(limit, 192));
     }
 
     private static ItemStack addRandomNBT(ItemStack prevItemStack){

@@ -22,11 +22,11 @@ public class RGive implements CommandExecutor {
             for (int i = 2; i < strings.length; i++) {
                 toGive.add(GiveHelper.parseItemStack(strings[i]));
             }
-            List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, Integer.parseInt(strings[1]), false);
-            players.forEach(player ->
+            players.forEach(player -> {
+                List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, Integer.parseInt(strings[1]), false, player.getLocation());
                 randomItemStack.forEach(itemStack ->
-                    player.getInventory().addItem(itemStack)
-                )
+                        player.getInventory().addItem(itemStack)
+                );}
             );
         }
         catch (Exception e) {
