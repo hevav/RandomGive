@@ -95,11 +95,13 @@ public class GiveHelper {
             );
 
             players.forEach(player -> {
+                    if (!player.isDead()){
                         List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, limit, invert, player.getLocation());
                         randomItemStack.forEach(itemStack ->
                                 player.getInventory().addItem(itemStack)
                         );
                     }
+                }
             );
         }
         catch (Exception e) {
@@ -112,12 +114,17 @@ public class GiveHelper {
     private static int multiplyLimit(int limit, Location playerLocation){
         if (RandomTools.config.contains("rgivecenter")) {
             Location middleLocation = RandomTools.config.getLocation("rgivecenterloc");
-            double locationAmount = RandomTools.config.getInt("rgivecenter");
-            double amountMultiplier = locationAmount - middleLocation.distance(playerLocation);
-            limit *= amountMultiplier / locationAmount;
+
+            if (middleLocation.getWorld().equals(playerLocation.getWorld())){
+                double locationAmount = RandomTools.config.getInt("rgivecenter");
+                double amountMultiplier = locationAmount - middleLocation.distance(playerLocation);
+                limit *= amountMultiplier / locationAmount;
+            }
+            else
+                return 0;
         }
 
-        return Math.max(1, Math.min(limit, 192));
+        return Math.max(0, Math.min(limit, 192));
     }
 
     private static ItemStack addRandomNBT(ItemStack prevItemStack){

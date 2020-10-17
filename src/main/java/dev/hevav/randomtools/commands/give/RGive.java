@@ -23,10 +23,13 @@ public class RGive implements CommandExecutor {
                 toGive.add(GiveHelper.parseItemStack(strings[i]));
             }
             players.forEach(player -> {
-                List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, Integer.parseInt(strings[1]), false, player.getLocation());
-                randomItemStack.forEach(itemStack ->
-                        player.getInventory().addItem(itemStack)
-                );}
+                    if (!player.isDead()) {
+                        List<ItemStack> randomItemStack = GiveHelper.getRandomItemStack(toGive, Integer.parseInt(strings[1]), false, player.getLocation());
+                        randomItemStack.forEach(itemStack ->
+                                player.getInventory().addItem(itemStack)
+                        );
+                    }
+                }
             );
         }
         catch (Exception e) {

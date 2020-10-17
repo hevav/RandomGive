@@ -15,6 +15,8 @@ public class RGiveCenter implements CommandExecutor {
         if (strings[0].equals("dis")){
             RandomTools.config.set("rgivecenter", null);
             RandomTools.config.set("rgivecenterloc", null);
+
+            return true;
         }
 
         if (!(commandSender instanceof Player))
